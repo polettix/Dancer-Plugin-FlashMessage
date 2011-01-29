@@ -5,7 +5,7 @@ use Dancer::Test;
 setting views => path('t', 'views');
 
 # load the plugin with persistence enabled
-setting('plugins', { FlashMessage => { persistence => 1 } });
+setting('plugins', { FlashMessage => { dequeue => 'never' } });
 use_ok 'Dancer::Plugin::FlashMessage';
 
 ok(
